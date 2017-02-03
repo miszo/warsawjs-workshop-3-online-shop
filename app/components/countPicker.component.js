@@ -1,7 +1,11 @@
 const template = `
-<form>
+<form name="countForm" ng-submit="$ctrl.submitForm(countForm)">
   <input type="number" name="count" ng-model="$ctrl.count" required min="1" max="100">
-  <button ng-click="$ctrl.addToCart($ctrl.count)">Add to cart</button>
+  <button ng-disabled="countForm.$invalid">Add to cart</button>
+  <div ng-if="countForm.$dirty">
+    <span ng-if="countForm.count.$error.min">Add at least one product.</span>
+    <span ng-if="countForm.count.$error.max">You can't buy more than 100 products.</span>
+  </div>
 </form>`
 
 class CountPickerControler {
@@ -9,8 +13,10 @@ class CountPickerControler {
     this.count = 0
   }
 
-  addToCart(count) {
-    console.log('ADDED!', count)
+  submitForm(form) {
+    console.log('ADDED!', this.count)
+    this.count = 0
+    form.$setPristine()
   }
 }
 
