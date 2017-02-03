@@ -14,7 +14,7 @@ class CountPickerControler {
   }
 
   submitForm(form) {
-    console.log('ADDED!', this.count)
+    this.pick({count: this.count})
     this.count = 0
     form.$setPristine()
   }
@@ -23,5 +23,8 @@ class CountPickerControler {
 export const name = 'countPicker'
 export const properties = {
   template,
-  controller: CountPickerControler
+  controller: CountPickerControler,
+  bindings: {
+    pick: '&onPick'
+  }
 }
