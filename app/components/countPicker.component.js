@@ -1,6 +1,6 @@
 const template = `
 <form>
-  <input type="number" name="count" ng-model="$ctrl.count">
+  <input type="number" name="count" ng-model="$ctrl.count" required min="1" max="100">
   <button ng-click="$ctrl.addToCart($ctrl.count)">Add to cart</button>
 </form>`
 
