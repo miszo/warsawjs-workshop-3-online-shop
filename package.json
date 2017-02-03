@@ -1,0 +1,20 @@
+{
+  "name": "warsawjs-workshop-3-online-shop",
+  "version": "0.0.1",
+  "description": "WarsawJS Workshop #3 - Online Shop",
+  "license": "MIT",
+  "author": "Mateusz Kocz",
+  "scripts": {
+    "start:manual": "http-server -a localhost -p 8000 ./app",
+    "start": "live-server ./app --port=8000"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "live-server": "^1.2.0"
+  },
+  "dependencies": {
+    "angular": "^1.6.1",
+    "systemjs": "^0.20.5",
+    "traceur": "0.0.111"
+  }
+}
