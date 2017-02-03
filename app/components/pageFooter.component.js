@@ -1,7 +1,7 @@
 export const name = 'pageFooter'
 export const properties = {
   template: `
-<footer>
+<header>
   <shop-logo size="small"></shop-logo>
-</footer>`
+</header>`
 }
