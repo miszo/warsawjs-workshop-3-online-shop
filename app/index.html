@@ -21,6 +21,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.41/system.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
   <script>
+    System.config({
+      baseURL: '.',
+      packages: {
+        '.': {
+          defaultJSExtensions: 'js'
+        }
+      },
+    })
     SystemJS.import('app.js').then(({moduleName}) => {
       // No need to wait for the "ready" event. Just for presentational purposes.
       angular.element(document).ready(() => {

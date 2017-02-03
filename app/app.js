@@ -1,4 +1,4 @@
-import ApplicationController from './application.controller.js'
+import ApplicationController from './application.controller'
 
 export const moduleName = 'show'
 
