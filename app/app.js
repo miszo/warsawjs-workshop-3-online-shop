@@ -8,3 +8,4 @@ export const moduleName = 'shop'
 angular.module(moduleName, [componentsModuleName, servicesModuleName])
   .constant('apiUrl', 'http://localhost:8001')
   .controller('ApplicationController', ApplicationController)
+  .filter('pluralize', () => (name, amount) => amount > 1 ? name + 's' : name)
