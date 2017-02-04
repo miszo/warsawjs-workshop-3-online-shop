@@ -1,5 +1,5 @@
 const template = `
-<div>
+<div draggable drag-data="{{ $ctrl.product }}" drag-data-name="product">
   <h2>{{ $ctrl.product.name | uppercase }}</h2>
   <p>for only {{ $ctrl.product.price | currency:'PLN' }}</p>
   <p>{{ $ctrl.product.description }}</p>
