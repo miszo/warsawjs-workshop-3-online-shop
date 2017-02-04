@@ -16,4 +16,8 @@ export default class ApplicationController {
     const addedProduct =  angular.extend(angular.copy(product), {amount})
     this.inCartProducts.push(addedProduct)
   }
+
+  removeProductFromCart(product) {
+    this.inCartProducts = this.inCartProducts.filter(({id}) => id !== product.id)
+  }
 }
