@@ -1,7 +1,7 @@
 export default class ApplicationController {
-  constructor(productsService) {
+  constructor(productsService, cartService) {
     this.productsService = productsService
-    this.inCartProducts = []
+    this.cartService = cartService
   }
 
   get products() {
@@ -12,17 +12,20 @@ export default class ApplicationController {
     return this.productsService.promotedProducts
   }
 
+  get inCartProducts() {
+    return this.cartService.cart
+  }
+
   $onInit() {
     this.productsService.loadProducts()
+    this.cartService.loadCart()
   }
 
   addProductToCart(product, amount) {
-    console.log(`Adding ${product.name} to cart. ${amount} items.`)
-    const addedProduct =  angular.extend(angular.copy(product), {amount})
-    this.inCartProducts.push(addedProduct)
+    this.cartService.addProduct(product, amount)
   }
 
   removeProductFromCart(product) {
-    this.inCartProducts = this.inCartProducts.filter(({id}) => id !== product.id)
+    this.cartService.removeProduct(product)
   }
 }
