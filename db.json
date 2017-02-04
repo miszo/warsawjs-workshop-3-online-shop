@@ -1,0 +1,61 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Orange",
+      "description": "The fruit of the citrus species Citrus × sinensis in the family Rutaceae. The fruit of sinensis is considered a sweet orange.",
+      "price": 10,
+      "promoted": false
+    },
+    {
+      "id": 2,
+      "name": "Banana",
+      "description": "An edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa.",
+      "price": 20,
+      "promoted": false
+    },
+    {
+      "id": 3,
+      "name": "Apple",
+      "description": "The fruit matures in late summer or autumn, and varieties exist with a wide range of sizes.",
+      "price": 5,
+      "promoted": true
+    },
+    {
+      "id": 4,
+      "name": "Pineapple",
+      "description": "The pineapple is a tropical plant with an edible multiple fruit consisting of coalesced berries",
+      "price": 10,
+      "promoted": true
+    },
+    {
+      "id": 5,
+      "name": "Strawberry",
+      "description": "The garden strawberry is a widely grown hybrid species of the genus Fragaria (collectively known as the strawberries).",
+      "price": 45.5,
+      "promoted": false
+    },
+    {
+      "id": 6,
+      "name": "Avocado",
+      "description": "The avocado (Persea americana) is a tree that is native to South Central Mexico, classified as a member of the flowering plant family Lauraceae.",
+      "price": 15,
+      "promoted": false
+    },
+    {
+      "id": 7,
+      "name": "Grapes",
+      "description": "A grape is a fruit, botanically a berry, of the deciduous woody vines of the flowering plant genus Vitis. Grapes can be eaten fresh.",
+      "price": 33.1,
+      "promoted": false
+    },
+    {
+      "id": 8,
+      "name": "Lemon",
+      "description": "The tree's ellipsoidal yellow fruit is used for culinary and non-culinary purposes throughout the world, primarily for its juice.",
+      "price": 0.15,
+      "promoted": false
+    }
+  ],
+  "cart": []
+}
