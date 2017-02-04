@@ -1,6 +1,6 @@
 const template = `
 <form name="searchForm" ng-submit="$ctrl.submitSearch()">
-  <input type="text" ng-model="$ctrl.searchTerm" ng-change="$ctrl.submitSearch()" ng-model-options="{debounce: 3000}">
+  <input placeholder="Search" type="text" ng-model="$ctrl.searchTerm" ng-change="$ctrl.submitSearch()" ng-model-options="{debounce: 3000}">
   <button>Search</button>
   <button ng-click="$ctrl.clearSearch()">Clear</button>
 </form>`
