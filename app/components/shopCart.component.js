@@ -1,7 +1,7 @@
 const template = `
 <p ng-if="!$ctrl.items.length">No products in cart.</p>
 <div ng-repeat="item in $ctrl.items">
-  {{ item.name }} - {{ item.amount }}
+  {{ item.name }} - {{ item.amount }} (added: {{ item.added | date:"MMM dd, yyyy 'at' hh:mm" }})
   <button ng-click="$ctrl.removeItem(item)">Remove</button>
 </div>`
 

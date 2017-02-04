@@ -19,7 +19,7 @@ export class CartService {
       existingProduct.amount += amount
       this.http.put(`${this.apiUrl}/cart/${existingProduct.id}`, existingProduct)
     } else {
-      const newProduct = angular.extend(angular.copy(product), {amount})
+      const newProduct = angular.extend(angular.copy(product), {amount}, {added: Date.now()})
       this.http.post(`${this.apiUrl}/cart`, newProduct)
         .then(() => this.cart.push(newProduct))
     }

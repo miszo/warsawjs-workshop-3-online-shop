@@ -1,7 +1,7 @@
 const template = `
 <div>
-  <h2>{{ $ctrl.product.name }}</h2>
-  <p>for only {{ $ctrl.product.price }}</p>
+  <h2>{{ $ctrl.product.name | uppercase }}</h2>
+  <p>for only {{ $ctrl.product.price | currency:'PLN' }}</p>
   <p>{{ $ctrl.product.description }}</p>
   <p>Add to cart</p>
   <count-picker on-pick="$ctrl.countPicked(count)"></count-picker>
