@@ -18,8 +18,8 @@
     </page-header-bar>
   </page-header>
   <page-content>
-    <promotions-list items="ctrl.promotedProducts"></promotions-list>
-    <products-list items="ctrl.products"></products-list>
+    <promotions-list items="ctrl.promotedProducts" on-add-to-cart="ctrl.addProductToCart(product, amount)"></promotions-list>
+    <products-list items="ctrl.products" on-add-to-cart="ctrl.addProductToCart(product, amount)"></products-list>
   </page-content>
   <page-footer></page-footer>
 

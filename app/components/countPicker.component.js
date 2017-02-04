@@ -8,7 +8,7 @@ const template = `
   </div>
 </form>`
 
-class CountPickerControler {
+class CountPickerController {
   constructor() {
     this.count = 0
   }
@@ -23,7 +23,7 @@ class CountPickerControler {
 export const name = 'countPicker'
 export const properties = {
   template,
-  controller: CountPickerControler,
+  controller: CountPickerController,
   bindings: {
     pick: '&onPick'
   }

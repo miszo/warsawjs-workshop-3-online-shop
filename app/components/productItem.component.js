@@ -9,7 +9,7 @@ const template = `
 
 class ProductItemController {
   countPicked(count) {
-    console.log(`Picked ${count} items.`)
+    this.addToCart({amount: count})
   }
 }
 
@@ -17,7 +17,8 @@ export const name = 'productItem'
 export const properties = {
   template,
   bindings: {
-    product: '<item'
+    product: '<item',
+    addToCart: '&onAddToCart'
   },
   controller: ProductItemController
 }
