@@ -1,13 +1,14 @@
 export const name = 'cartService'
 
 export class CartService {
-  constructor($http) {
+  constructor($http, apiUrl) {
     this.http = $http
+    this.apiUrl = apiUrl
     this.cart = []
   }
 
   loadCart() {
-    this.http.get('http://localhost:8001/cart')
+    this.http.get(`${this.apiUrl}/cart`)
       .then(response => response.data)
       .then(items => this.cart.push.apply(this.cart, items))
   }
@@ -16,16 +17,16 @@ export class CartService {
     const existingProduct = this.cart.find(inCartProduct => product.id === inCartProduct.id)
     if (existingProduct) {
       existingProduct.amount += amount
-      this.http.put('http://localhost:8001/cart/' + existingProduct.id, existingProduct)
+      this.http.put(`${this.apiUrl}/cart/${existingProduct.id}`, existingProduct)
     } else {
       const newProduct = angular.extend(angular.copy(product), {amount})
-      this.http.post('http://localhost:8001/cart', newProduct)
+      this.http.post(`${this.apiUrl}/cart`, newProduct)
         .then(() => this.cart.push(newProduct))
     }
   }
 
   removeProduct(product) {
-    this.http.delete('http://localhost:8001/cart/' + product.id)
+    this.http.delete(`${this.apiUrl}/cart/${product.id}`)
       .then(() => this.cart = this.cart.filter(inCartProduct => inCartProduct.id !== product.id))
   }
 }

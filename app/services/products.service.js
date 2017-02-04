@@ -1,8 +1,9 @@
 export const name = 'productsService'
 
 export class ProductsService {
-  constructor($http) {
+  constructor($http, apiUrl) {
     this.http = $http;
+    this.apiUrl = apiUrl
     this.productsStore = {
       normal: [],
       promoted: []
@@ -18,7 +19,7 @@ export class ProductsService {
   }
 
   loadProducts() {
-    this.http.get('http://localhost:8001/products')
+    this.http.get(`${this.apiUrl}/products`)
       .then(response => response.data)
       .then(products => {
         this.productsStore.normal = products.filter(product => !product.promoted)
