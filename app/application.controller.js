@@ -1,14 +1,19 @@
 export default class ApplicationController {
-  constructor() {
-    this.products = [
-      {name: 'Orange', price: 10, id: 1},
-      {name: 'Banana', price: 20, id: 2}
-    ]
-    this.promotedProducts = [
-      {name: 'Apple', price: 5, id: 3},
-      {name: 'Pineapple', price: 10, id: 4}
-    ]
+  constructor(productsService) {
+    this.productsService = productsService
     this.inCartProducts = []
+  }
+
+  get products() {
+    return this.productsService.products
+  }
+
+  get promotedProducts() {
+    return this.productsService.promotedProducts
+  }
+
+  $onInit() {
+    this.productsService.loadProducts()
   }
 
   addProductToCart(product, amount) {
