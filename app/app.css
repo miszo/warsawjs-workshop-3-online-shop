@@ -509,10 +509,6 @@ page-header-bar button {
   background: none;
 }
 
-page-footer {
-  color: green;
-}
-
 products-list, promotions-list {
   display: flex;
   flex-flow: row wrap;
@@ -588,4 +584,3 @@ button:not([disabled]) {
  Workshop styles
  ===============
  */
-
